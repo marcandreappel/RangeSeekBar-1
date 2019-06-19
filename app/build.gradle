@@ -1,18 +1,19 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 28
 
     defaultConfig {
-        applicationId rootProject.ext.applicationId
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId 'sample'
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName '1.0'
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,13 +21,8 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            storeFile file("RangeSeekBar.jks")
-            storePassword "123456"
-            keyAlias "RangeSeekBar"
-            keyPassword "123456"
-        }
+    compileOptions {
+        sourceCompatibility = '1.8'
     }
 
 }
@@ -34,12 +30,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:$buildToolsVersion"
-    implementation "com.android.support:design:$buildToolsVersion"
-
-    implementation project(':RangeSeekBar')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+
+    implementation project(':rangeseekbar')
 }

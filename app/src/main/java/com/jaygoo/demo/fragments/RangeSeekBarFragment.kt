@@ -2,9 +2,9 @@ package com.jaygoo.demo.fragments
 
 import android.view.View
 import com.jaygoo.demo.R
-import com.jaygoo.widget.OnRangeChangedListener
-import com.jaygoo.widget.RangeSeekBar
-import com.jaygoo.widget.SeekBar
+import com.jaygoo.rangeseekbar.OnRangeChangedListener
+import com.jaygoo.rangeseekbar.RangeSeekBar
+import com.jaygoo.rangeseekbar.SeekBar
 import kotlinx.android.synthetic.main.fragment_range.*
 
 /**
